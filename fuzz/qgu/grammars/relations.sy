@@ -1,0 +1,24 @@
+(set-logic ALL)
+(synth-fun P ((a (Set (Tuple Int Int))) (b (Set (Tuple Int Int))) (c Int) (d (Tuple Int Int))) Bool
+((Start Bool) (StartRel (Set (Tuple Int Int))) (StartInt Int) (StartTuple (Tuple Int Int)))
+(
+(Start Bool (
+  (not Start)
+  (= Start Start)
+  (= StartRel StartRel)
+  (or Start Start)
+  (ite Start Start Start)
+  ))
+(StartRel (Set (Tuple Int Int)) (
+  a b
+  (transpose StartRel)
+  (tclosure StartRel)
+  (join StartRel StartRel)
+  (singleton StartTuple)
+))
+(StartInt Int (c 0 1 (+ StartInt StartInt)))
+(StartTuple (Tuple Int Int) (d (tuple StartInt StartInt)))
+))
+
+
+(check-synth)

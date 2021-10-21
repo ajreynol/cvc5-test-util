@@ -1,0 +1,23 @@
+(set-logic ALL)
+(synth-fun P ((a (Array Int Int)) (b (Array Int Int)) (x Int) (y Int)) Bool
+((Start Bool) (StartArray (Array Int Int)) (StartInt Int))
+(
+(Start Bool (
+  (= StartArray StartArray)
+  (= StartInt StartInt)
+  (or Start Start)
+  (>= StartInt StartInt)
+  ))
+(StartArray (Array Int Int) (
+  a b (store StartArray StartInt StartInt)
+  (ite Start StartArray StartArray)
+  ))
+(StartInt Int (
+  x y 0 1 (+ StartInt StartInt) (- StartInt StartInt) (* StartInt StartInt) ;(div StartInt StartInt) (mod StartInt StartInt)
+  (select StartArray StartInt)
+  (ite Start StartInt StartInt)
+))
+))
+
+
+(check-synth)

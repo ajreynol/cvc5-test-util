@@ -1,0 +1,7 @@
+(set-logic ALL)
+(declare-fun a () (Bag (Tuple Int Int)))
+(declare-fun b () (Bag (Tuple Int Int)))
+(declare-fun c () Int)
+(declare-fun d () (Tuple Int Int))
+(assert (let ((_let_1 (bag d c))) (and (= a (bag (tuple 1 1) c)) (= a (union_max a _let_1)) (= a (difference_subtract a (bag d 1))) (= a (union_disjoint a _let_1)) (= a (intersection_min a _let_1)))))
+(check-sat)

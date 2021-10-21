@@ -1,0 +1,26 @@
+(set-logic ALL)
+(synth-fun P ((a (Bag (Tuple Int Int))) (b (Bag (Tuple Int Int))) (c Int) (d (Tuple Int Int))) Bool
+((Start Bool) (StartBag (Bag (Tuple Int Int))) (StartInt Int) (StartTuple (Tuple Int Int)))
+(
+(Start Bool (
+  (not Start)
+  (= Start Start)
+  (= StartBag StartBag)
+  (or Start Start)
+  (ite Start Start Start)
+  ))
+(StartBag (Bag (Tuple Int Int)) (
+  a b
+  (union_max StartBag StartBag)
+  (union_disjoint StartBag StartBag)
+  (bag StartTuple StartInt)
+  (intersection_min StartBag StartBag)
+  (difference_subtract StartBag StartBag)
+  (difference_remove StartBag StartBag)
+))
+(StartInt Int (c 0 1 (bag.count StartTuple StartBag) (+ StartInt StartInt)))
+(StartTuple (Tuple Int Int) (d (tuple StartInt StartInt)))
+))
+
+
+(check-synth)
