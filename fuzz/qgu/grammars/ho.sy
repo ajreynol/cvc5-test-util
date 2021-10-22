@@ -1,0 +1,28 @@
+(set-logic HO_ALL)
+(synth-fun P ((a (-> Int Int Int)) (b (-> Int Int Int)) (c (-> Int Int)) (d (-> Int Int)) (x (-> (-> Int Int) Int))) Bool
+((Start Bool) (StartFun2 (-> Int Int Int)) (StartFun (-> Int Int)) (StartInt Int))
+(
+(Start Bool (
+  (= StartFun StartFun)
+  (= StartFun2 StartFun2)
+  (= StartInt StartInt)
+  (or Start Start)
+  (>= StartInt StartInt)
+))
+(StartFun2 (-> Int Int Int) (
+  a b 
+  (ite Start StartFun2 StartFun2)
+))
+(StartFun (-> Int Int) (
+  c d (a StartInt) (b StartInt)
+  (ite Start StartFun StartFun)
+))
+(StartInt Int (
+  (a StartInt StartInt) (b StartInt StartInt) (c StartInt) (d StartInt) (x StartFun)
+  0 1 (+ StartInt StartInt) (- StartInt StartInt) (* StartInt StartInt)
+  (ite Start StartInt StartInt)
+))
+))
+
+
+(check-synth)
