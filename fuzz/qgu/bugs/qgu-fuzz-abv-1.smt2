@@ -1,0 +1,7 @@
+(declare-const a (Array (_ BitVec 8) (_ BitVec 8))) 
+(declare-const b (Array (_ BitVec 8) (_ BitVec 8))) 
+(declare-const x (_ BitVec 8)) 
+(declare-const y (_ BitVec 8)) 
+(declare-const z (_ BitVec 4))
+(assert (let ((_let_1 (bvmul x x))) (and (= b (store a x #b00000001)) (= (bvand x _let_1) x) (= b (store a y x)) (= b (store a y y)) (= (bvadd y (concat #b0001 z)) x) (= (bvmul x _let_1) x))))
+(check-sat)

@@ -1,0 +1,8 @@
+(set-logic ALL)
+(set-option :check-proofs true)
+(declare-fun a () Bool)
+(declare-fun b () Bool)
+(declare-fun c () Bool)
+(declare-fun d () Bool)
+(assert (let ((_let_1 (ite c a (= b d)))) (and (= a _let_1) (= a (ite a (not d) c)) (or a _let_1) (= a (ite c a (not b))) (= a (ite d (or a c) b)) (not (= a (or b c))))))
+(check-sat)

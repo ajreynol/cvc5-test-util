@@ -1,0 +1,36 @@
+(set-logic SLIA)
+(synth-fun P ((x String) (y String)) Bool
+((Start Bool) (StartStr String) (StartStrC String) (StartRL RegLan) (StartRLi RegLan))
+(
+(Start Bool (
+  (= StartStr StartStr)
+  (or Start Start)
+  (str.in_re StartStr StartRL)
+  (str.contains StartStr StartStr)
+  (str.prefixof StartStr StartStr)
+  ))
+(StartStr String (
+  x y
+  (ite Start StartStr StartStr)
+  StartStrC
+  ))
+(StartStrC String (
+  "A" "B" ""
+  (str.++ StartStrC StartStrC)))
+(StartRL RegLan (
+(re.++ StartRLi StartRLi)
+(re.inter StartRL StartRL)
+(re.union StartRL StartRL)
+(re.* StartRLi)
+))
+(StartRLi RegLan (
+(str.to_re StartStrC)
+(re.union StartRLi StartRLi)
+(re.++ StartRLi StartRLi)
+(re.* StartRLi)
+re.allchar
+))
+))
+
+
+(check-synth)

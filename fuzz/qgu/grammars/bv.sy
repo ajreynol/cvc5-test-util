@@ -1,0 +1,23 @@
+(set-logic ALL)
+(synth-fun P ( (x (_ BitVec 8)) (y (_ BitVec 8)) (z (_ BitVec 4)) (w (_ BitVec 4))) Bool
+((Start Bool) (StartBv (_ BitVec 8)) (StartBv4 (_ BitVec 4)))
+(
+(Start Bool (
+  (= StartBv StartBv)
+  (or Start Start)
+  (bvuge StartBv StartBv)
+  ))
+(StartBv (_ BitVec 8) (
+  x y #x00 #x01 (bvadd StartBv StartBv) (bvsub StartBv StartBv) (bvmul StartBv StartBv) (bvand StartBv StartBv)
+  (concat StartBv4 StartBv4)
+  (ite Start StartBv StartBv)
+))
+(StartBv4 (_ BitVec 4) (
+  z w #x0 #x1 (bvadd StartBv4 StartBv4) (bvsub StartBv4 StartBv4) (bvmul StartBv4 StartBv4) (bvand StartBv4 StartBv4)
+  ((_ extract 7 4) StartBv) ((_ extract 3 0) StartBv)
+  (ite Start StartBv4 StartBv4)
+))
+))
+
+
+(check-synth)
