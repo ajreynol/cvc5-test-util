@@ -3,5 +3,5 @@
 (declare-fun b () (Set (Tuple Int Int)))
 (declare-fun c () Int)
 (declare-fun d () (Tuple Int Int))
-(assert (and (= b (singleton (tuple 1 0))) (= a (join b (transpose a))) (= a (join b (tclosure a))) (= a (join b (singleton d)))))
+(assert (and (= a (singleton (tuple (+ c 1) 1))) (= (tclosure b) (join a a))))
 (check-sat)

@@ -1,0 +1,7 @@
+(declare-const x Bool)
+(set-option :check-proofs true)
+(declare-fun b () Bool)
+(declare-fun c () Bool)
+(declare-fun d () Bool)
+(assert (and (ite c x false) (ite (or x d) (not b) x) (ite d (= b (ite b true d)) b)))
+(check-sat)
