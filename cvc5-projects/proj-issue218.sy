@@ -1,0 +1,33 @@
+(set-logic ALL)
+(define-fun safe-mod ((x Int) (y Int)) Int (mod x (+ 1 (abs y))))
+(define-fun clamp-int ((x Int)) Int (ite (< 5 x) 5 (ite (< x 0) 0 x)))
+(synth-fun args_0_refinement_0
+	((r Int)) Bool
+	((fv_B Bool) (B Bool) (fv_I Int) (I Int) (IConst Int))
+	(
+		(fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_I I) (= I fv_I) (< fv_I I) (< I fv_I) (<= fv_I I) (<= I fv_I)))
+		(B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I)))
+		(fv_I Int (r (+ fv_I I) (+ I fv_I) (- fv_I I) (- I fv_I)))
+		(I Int ((Variable Int)))
+		(IConst Int ((Constant Int)))
+	)
+)
+(synth-fun ret_refinement_0 
+	((x0 Int) (r Int)) Bool 
+	((fv_B Bool) (B Bool) (fv_I Int) (I Int) (IConst Int)) 
+	(
+		(fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_I I) (= I fv_I) (< fv_I I) (< I fv_I) (<= fv_I I) (<= I fv_I)))
+		(B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I)))
+		(fv_I Int (r (+ fv_I I) (+ I fv_I) (- fv_I I) (- I fv_I) (* fv_I I) (* I fv_I) (safe-mod fv_I IConst)))
+		(I Int ((Variable Int) (+ I I) (- I I) (* I I) (safe-mod I IConst)))
+		(IConst Int ((Constant Int)))
+	)
+)
+(constraint (exists ((e_ret Int)) (args_0_refinement_0 e_ret)))
+(constraint (exists ((e_ret Int) (arg0 Int)) (ret_refinement_0 arg0 e_ret)))
+(constraint (and (args_0_refinement_0 2) (ret_refinement_0 2 8)))
+(constraint (and (args_0_refinement_0 2) (not (ret_refinement_0 2 (- 1)))))
+(constraint (and (args_0_refinement_0 (- 2)) (ret_refinement_0 (- 2) (- 8))))
+(constraint (and (args_0_refinement_0 0) (ret_refinement_0 0 0)))
+(constraint (and (args_0_refinement_0 0) (not (ret_refinement_0 0 (- 1)))))
+(check-synth)

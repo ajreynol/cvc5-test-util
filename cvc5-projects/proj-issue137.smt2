@@ -1,0 +1,7 @@
+(set-option :conjecture-filter-active-terms false)
+(set-option :conjecture-filter-model false)
+(set-option :conjecture-gen true)
+(set-option :sygus-inference true)
+(declare-fun a () String)
+(assert (distinct (str.++ a a) a))
+(check-sat)

@@ -1,0 +1,13 @@
+(set-logic NRA)
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun e () Real)
+(declare-fun ep () Real)
+(declare-fun f () Real)
+(declare-fun k () Real)
+(assert (not (exists ((g Real)) (=> (xor (and (and (and (= (<= g e)
+ (<= g ep)) (= b a)) (< b a)) (> b (+ a (* d d c)))) (> b (/ f (/ (*
+ k k) (* 2 c)))0)) (xor (>= b (* e d)) (> b 0))))))
+(check-sat)

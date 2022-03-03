@@ -1,0 +1,58 @@
+(set-logic ALL)
+(define-fun safe-mod ((x Int) (y Int)) Int (mod x (+ 1 (abs y))))
+(define-fun clamp-int ((x Int)) Int (ite (< 5 x) 5 (ite (< x 0) 0 x)))
+(define-fun clamp-double ((x Real)) Real (ite (< 5 x) 5 (ite (< x 0) 0 x)))
+(synth-fun args_0_refinement_0
+	((r Int)) Bool 
+	((fv_B Bool) (B Bool) (fv_I Int) (I Int) (IClamp Int) (IConst Int)) 
+	((fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_I I) (= I fv_I) (< fv_I I) (< I fv_I) (<= fv_I I) (<= I fv_I))) (B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (fv_I Int (r IClamp (+ fv_I I) (+ I fv_I))) (I Int ((Variable Int) (+ I I) (- I I))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun args_1_refinement_0 
+	((x0 Int)) Bool 
+	((B Bool) (I Int) (IClamp Int) (IConst Int)) 
+	((B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (I Int ((Variable Int) IClamp (+ I I))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun args_1_refinement_1 
+	((x0 Int)) Bool 
+	((B Bool) (I Int) (IClamp Int) (IConst Int)) 
+	((B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (I Int ((Variable Int) IClamp (+ I I))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun args_1_refinement_4 
+	((x0 Int) (r Int)) Bool 
+	((fv_B Bool) (B Bool) (fv_I Int) (I Int) (IClamp Int) (IConst Int)) 
+	((fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_I I) (= I fv_I) (< fv_I I) (< I fv_I) (<= fv_I I) (<= I fv_I))) (B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (fv_I Int (r IClamp (+ fv_I I) (+ I fv_I))) (I Int ((Variable Int) IClamp (+ I I))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun args_1_refinement_2 
+	((x0 Int) (r__size_m__3 Int)) Bool 
+	((fv_B Bool) (B Bool) (fv_I Int) (I Int) (IClamp Int) (IConst Int)) 
+	((fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_I I) (= I fv_I) (< fv_I I) (< I fv_I) (<= fv_I I) (<= I fv_I))) (B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (fv_I Int ((Variable Int) IClamp (+ fv_I I) (+ I fv_I) (- fv_I I) (- I fv_I) r__size_m__3)) (I Int ((Variable Int) IClamp r__size_m__3)) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun args_1_refinement_3 
+	((x0 Int) (r Real)) Bool 
+	((fv_B Bool) (B Bool) (I Int) (IClamp Int) (IConst Int) (fv_D Real) (D Real) (DClamp Real) (DConst Real)) 
+	((fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_D D) (= D fv_D) (< fv_D D) (< D fv_D) (<= fv_D D) (<= D fv_D))) (B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I) (= D D) (< D D) (<= D D))) (I Int ((Variable Int) IClamp (+ I I))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))) (fv_D Real (r DClamp (+ fv_D D) (+ D fv_D) (- fv_D D) (- D fv_D))) (D Real ((Variable Real) DClamp (+ D D) (- D D))) (DClamp Real ((clamp-double DConst))) (DConst Real ((Constant Real))))
+)
+(synth-fun ret_refinement_0 
+	((x0 Int)) Bool 
+	((B Bool) (I Int) (IClamp Int) (IConst Int)) 
+	((B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (I Int ((Variable Int) IClamp (+ I I) (- I I) (* I I) (safe-mod I IConst))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun ret_refinement_1 
+	((x0 Int) (r__size_m__3 Int)) Bool 
+	((fv_B Bool) (B Bool) (fv_I Int) (I Int) (IClamp Int) (IConst Int)) 
+	((fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_I I) (= I fv_I) (< fv_I I) (< I fv_I) (<= fv_I I) (<= I fv_I))) (B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I))) (fv_I Int ((Variable Int) IClamp (+ fv_I I) (+ I fv_I) (- fv_I I) (- I fv_I) (* fv_I I) (* I fv_I) (safe-mod fv_I IConst) r__size_m__3)) (I Int ((Variable Int) IClamp (+ I I) (- I I) (* I I) (safe-mod I IConst) r__size_m__3)) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))))
+)
+(synth-fun ret_refinement_2 
+	((x0 Int) (r Real)) Bool 
+	((fv_B Bool) (B Bool) (I Int) (IClamp Int) (IConst Int) (fv_D Real) (D Real) (DClamp Real) (DConst Real)) 
+	((fv_B Bool ((Variable Bool) true false (=> fv_B B) (=> B fv_B) (and fv_B B) (and B fv_B) (= fv_D D) (= D fv_D) (< fv_D D) (< D fv_D) (<= fv_D D) (<= D fv_D))) (B Bool ((Variable Bool) true false (=> B B) (and B B) (= I I) (< I I) (<= I I) (= D D) (< D D) (<= D D))) (I Int ((Variable Int) IClamp (+ I I) (- I I) (* I I) (safe-mod I IConst))) (IClamp Int ((clamp-int IConst))) (IConst Int ((Constant Int))) (fv_D Real (r DClamp (+ fv_D D) (+ D fv_D) (- fv_D D) (- D fv_D) (* fv_D D) (* D fv_D))) (D Real ((Variable Real) DClamp (+ D D) (- D D) (* D D))) (DClamp Real ((clamp-double DConst))) (DConst Real ((Constant Real))))
+)
+(constraint (and (and (args_0_refinement_0 1) (args_1_refinement_0 1) (args_1_refinement_1 1)) (not (and (ret_refinement_0 1) (ret_refinement_1 1 0) (exists ((e_ret Real))(ret_refinement_2 1 e_ret))))))
+(constraint (and (and (args_0_refinement_0 0) (args_1_refinement_0 0) (args_1_refinement_1 0)) (and (ret_refinement_0 0) (exists ((new__size_m__3 Int))(ret_refinement_1 0 new__size_m__3)))))
+(constraint (and (and (args_0_refinement_0 0) (args_1_refinement_0 0)) (not (and (ret_refinement_0 0) (ret_refinement_1 0 0) (exists ((e_ret Real))(ret_refinement_2 0 e_ret))))))
+(constraint (and (and (args_0_refinement_0 0) (args_1_refinement_0 0)) (and (ret_refinement_0 0))))
+(constraint (and (and (args_0_refinement_0 0) (args_1_refinement_0 0)) (not (and (ret_refinement_0 0) (ret_refinement_1 0 1) (ret_refinement_2 0 (/ 0 1))))))
+(constraint (and (and (args_0_refinement_0 0)) (and (ret_refinement_0 0) (exists ((new__size_m__3 Int))(ret_refinement_1 0 new__size_m__3)))))
+(constraint (and (and (args_0_refinement_0 0)) (and (ret_refinement_0 0))))
+(constraint (and (and (args_0_refinement_0 0)) (not (and (ret_refinement_0 0) (ret_refinement_1 0 0) (exists ((e_ret Real))(ret_refinement_2 0 e_ret))))))
+(check-synth)

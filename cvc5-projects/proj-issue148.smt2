@@ -1,0 +1,8 @@
+(set-logic QF_AUFNIA)
+(set-option :conjecture-filter-active-terms false)
+(set-option :conjecture-gen true)
+(set-option :quant-model-ee true)
+(set-option :sygus-inference true)
+(declare-const arr1 (Array Int Bool))
+(assert (select arr1 33))
+(check-sat)

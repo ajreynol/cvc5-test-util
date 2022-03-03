@@ -1,0 +1,28 @@
+(set-logic ALL)
+(define-fun safe-mod ((x Int) (y Int)) Int (mod x (+ 1 (abs y))))
+
+(synth-fun f 
+	((r Int)) Bool 
+	((B Bool) )
+	(
+		(B Bool (true)) 
+	)
+)
+
+(synth-fun g 
+	((x0 Int) (r Int)) Bool 
+	((B Bool) (I Int) (IConst Int)) 
+	(
+		(B Bool ((<= I I) ))
+		(I Int ((Variable Int) (+ I I) (* I I) (safe-mod I IConst)))
+		(IConst Int ((Constant Int)))
+	)
+)
+
+; (constraint (f 2))
+
+(constraint (g 2 8))
+(constraint (g (- 2) (- 8)))
+(constraint (not (g 0 (- 1))))
+
+(check-synth)

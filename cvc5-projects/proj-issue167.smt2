@@ -1,0 +1,7 @@
+(set-option :ite-simp true)  
+(set-option :sygus-inference true)   
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Bool)
+(assert (= b (ite (= (ite c 4 0) 4) 20 0)))
+(check-sat)  
