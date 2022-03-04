@@ -1,0 +1,7 @@
+(set-logic ALL)
+(set-info :status sat)
+(declare-const a Bool)                                                          
+(declare-fun b () Real)
+(assert (or a (= 0 (* b b b))))
+(assert (> (* b b) 3))
+(check-sat)
