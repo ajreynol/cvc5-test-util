@@ -1,5 +1,5 @@
 (set-logic LIA)
-(set-option :cbqi-nested-qe true)
+(set-option :cegqi-nested-qe true)
 (set-option :lte-restrict-inst-closure true)
 (assert (forall ((q0 Int) (q1 Bool) (q2 Int)) (=> (distinct q2 0) false)))
 (check-sat)

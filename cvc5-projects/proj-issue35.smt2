@@ -1,3 +1,4 @@
+(set-option :strings-exp true)
 (set-option :produce-unsat-cores true)
 (set-info :status unsat)
 (declare-fun s () String)

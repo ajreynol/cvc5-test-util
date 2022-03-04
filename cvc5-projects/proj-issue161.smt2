@@ -1,6 +1,7 @@
 (set-logic QF_ALIA)
-(set-option :cbqi true)
+(set-option :cegqi true)
 (set-option :repeat-simp true)
+(set-option :incremental true)
 (declare-fun i3 () Int)
 (check-sat)
 (assert (= (div i3 158) 51))

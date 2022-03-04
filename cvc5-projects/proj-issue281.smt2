@@ -1,3 +1,4 @@
+(set-option :strings-exp true)
 (declare-const x Bool)
 (declare-fun c () Int)
 (declare-fun c_ () Int)

@@ -1,6 +1,5 @@
-(set-logic UF)
+(set-logic HO_UF)
 (set-option :fmf-bound true)
-(set-option :uf-ho true)
 (set-option :finite-model-find true)
 (declare-sort a 0)
 (declare-sort b 0)

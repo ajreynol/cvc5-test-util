@@ -1,7 +1,7 @@
 (set-option :ag-miniscope-quant true)
 (set-option :qcf-nested-conflict true)
 (set-option :macros-quant true)
-(set-option :cbqi false)
+(set-option :cegqi false)
 (set-option :fmf-fun-rlv true)
 (set-option :var-elim-quant false)
 (declare-fun a (Int Bool Bool Int Int Int Int Int Int Int Bool Bool Int Bool Bool Bool Bool Bool Bool Bool) Bool)

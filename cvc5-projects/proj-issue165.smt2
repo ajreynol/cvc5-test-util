@@ -1,5 +1,5 @@
 (set-logic QF_UFNIA)
-(set-option :cbqi-all true)
+(set-option :cegqi-all true)
 (set-option :quant-split true)
 (set-option :partial-triggers true)
 (set-option :full-saturate-quant true)

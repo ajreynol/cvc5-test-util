@@ -1,3 +1,4 @@
+(set-option :strings-exp true)
 (declare-const u Bool)
 (declare-fun v () String)
 (assert   (exists ((x Int)) (or (not (>= 0 (str.len (str.substr 

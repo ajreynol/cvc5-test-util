@@ -1,5 +1,5 @@
 (set-option :cegqi-all true)
-(set-option :fs-interleave true)
+(set-option :enum-inst-interleave true)
 (declare-sort a 0)
 (declare-sort ao 0)
 (declare-sort b 0)

@@ -1,7 +1,7 @@
 (set-option :sygus-inference true)
 (set-option :quant-cf true)
-(set-option :fs-interleave true)
-(set-option :cbqi-all true)
+(set-option :enum-inst-interleave true)
+(set-option :cegqi-all true)
 (set-option :arith-rewrite-equalities true)
 (set-option :ag-miniscope-quant true)
 (declare-fun a (Bool Bool Bool Bool Real Real Real Real Real Real Real Real

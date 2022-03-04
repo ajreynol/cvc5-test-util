@@ -1,7 +1,7 @@
 (set-option :ag-miniscope-quant true)
 (set-option :relational-triggers true)
 (set-option :int-wf-ind true)
-(set-option :cbqi-all true)
+(set-option :cegqi-all true)
 (declare-fun a (Bool Bool Bool Bool Bool Bool Bool Bool Bool Bool Bool
         Bool Int Int Int Int Int Int Bool Int Int Int Int Int
         Int Bool Int Int Int Int Int Int Bool) Bool)
