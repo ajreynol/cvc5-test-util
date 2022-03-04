@@ -47,7 +47,7 @@
 (assert (= (Variable6 0) (rel.join Variable1 (Tclosure 0))))
 (assert (= (Variable7 0) (rel.join Variable2 (Tclosure 0))))
 (assert (= (Variable5 0) (rel.join (Variable6 0) (Variable4 0))))
-(assert (= (Variable8 0) (rel.join (Variable5 0) (transpose (Variable7 0)))))
+(assert (= (Variable8 0) (rel.join (Variable5 0) (rel.transpose (Variable7 0)))))
 
 (declare-fun Variable9 (Int) Int)
 (declare-fun Variable10 (Int) Int)
@@ -113,7 +113,7 @@
 (assert (= (Variable6 1) (rel.join Variable1 (Tclosure 1))))
 (assert (= (Variable7 1) (rel.join Variable2 (Tclosure 1))))
 (assert (= (Variable5 1) (rel.join (Variable6 1) (Variable4 1))))
-(assert (= (Variable8 1) (rel.join (Variable5 1) (transpose (Variable7 1)))))
+(assert (= (Variable8 1) (rel.join (Variable5 1) (rel.transpose (Variable7 1)))))
 
 
 (assert 
@@ -175,7 +175,7 @@
 (assert (= (Variable6 2) (rel.join Variable1 (Tclosure 2))))
 (assert (= (Variable7 2) (rel.join Variable2 (Tclosure 2))))
 (assert (= (Variable5 2) (rel.join (Variable6 2) (Variable4 2))))
-(assert (= (Variable8 2) (rel.join (Variable5 2) (transpose (Variable7 2)))))
+(assert (= (Variable8 2) (rel.join (Variable5 2) (rel.transpose (Variable7 2)))))
 
 (assert (= (Variable12 1) 1))
 
