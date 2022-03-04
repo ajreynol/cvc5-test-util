@@ -28,7 +28,7 @@
 (tuple 6 6) 
 (tuple 3 7) 
 (tuple 7 5) 
-;(tuple 1 9)  ;;COMMENT THIS LINE
+(tuple 1 9)  ;;COMMENT THIS LINE
 (set.singleton (tuple 10 10)))))
 (declare-fun Variable4 (Int) (Set (Tuple Int Int Int)))
 
@@ -86,17 +86,17 @@
 (assert (or 
 (and (= (Variable9 0) 1)
 (xor (= Variable13 
-(setminus (union (union  Variable14 (set.singleton(tuple 4 8))) (set.singleton(tuple 6 8))) (set.singleton(tuple 2 8))))
+(set.minus (set.union (set.union  Variable14 (set.singleton(tuple 4 8))) (set.singleton(tuple 6 8))) (set.singleton(tuple 2 8))))
 (= Variable13 Variable14)))
 
 (and (= (Variable10 0) 1)
 (xor (= Variable13 
-(union  Variable14 (set.singleton(tuple 6 4))))
+(set.union  Variable14 (set.singleton(tuple 6 4))))
 (= Variable13 Variable14)))
 
 (and (= (Variable11 0) 1)
 (xor (= Variable13 
-(union  Variable14 (set.singleton(tuple 2 6))))
+(set.union  Variable14 (set.singleton(tuple 2 6))))
 (= Variable13 Variable14)))
 
 (= Variable13 Variable14)))
@@ -104,7 +104,7 @@
 (assert (or 
 (and (= (Variable12 0) 1)
 (xor (= (Variable4 1) 
-(union  (Variable4 0) (set.singleton(tuple 7 17 9))))
+(set.union  (Variable4 0) (set.singleton(tuple 7 17 9))))
 (= (Variable4 1) (Variable4 0))))
 
 (= (Variable4 1) (Variable4 0))))
@@ -148,17 +148,17 @@
 (assert (or 
 (and (= (Variable9 1) 1)
 (xor (= Variable15 
-(setminus (union (union  Variable16 (set.singleton(tuple 4 8))) (set.singleton(tuple 6 8))) (set.singleton(tuple 2 8))))
+(set.minus (set.union (set.union  Variable16 (set.singleton(tuple 4 8))) (set.singleton(tuple 6 8))) (set.singleton(tuple 2 8))))
 (= Variable15 Variable16)))
 
 (and (= (Variable10 1) 1)
 (xor (= Variable15 
-(union  Variable16 (set.singleton(tuple 6 4))))
+(set.union  Variable16 (set.singleton(tuple 6 4))))
 (= Variable15 Variable16)))
 
 (and (= (Variable11 1) 1)
 (xor (= Variable15 
-(union  Variable16 (set.singleton(tuple 2 6))))
+(set.union  Variable16 (set.singleton(tuple 2 6))))
 (= Variable15 Variable16)))
 
 (= Variable15 Variable16)))
@@ -166,7 +166,7 @@
 (assert (or 
 (and (= (Variable12 1) 1)
 (xor (= (Variable4 2) 
-(union  (Variable4 1) (set.singleton(tuple 7 17 9))))
+(set.union  (Variable4 1) (set.singleton(tuple 7 17 9))))
 (= (Variable4 2) (Variable4 1))))
 
 (= (Variable4 2) (Variable4 1))))
