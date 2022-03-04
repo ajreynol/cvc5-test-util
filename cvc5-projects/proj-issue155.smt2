@@ -1,3 +1,5 @@
+(set-logic ALL)
+(set-info :status unsat)
 (set-option :ag-miniscope-quant true)
 (set-option :qcf-nested-conflict true)
 (set-option :macros-quant true)

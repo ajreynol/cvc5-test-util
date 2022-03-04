@@ -1,3 +1,5 @@
+(set-logic ALL)
+(set-info :status sat)
 (declare-fun a () Real)
 (declare-fun c () Real)
 (declare-fun b () Real)

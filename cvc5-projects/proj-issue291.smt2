@@ -1,4 +1,6 @@
+(set-logic ALL)
+(set-info :status sat)
 (declare-const x1 Real)
 (declare-fun s () Real)
-(assert (and (> (* x1 s x1) 1) (exists ((x Bool)) (ite true (= x1 1) false))))
+(assert (and (> (* x1 s x1) 1) (exists ((x Bool)) (=> (not true) false))))
 (check-sat)

@@ -1,3 +1,5 @@
+(set-logic ALL)
+(set-info :status sat)
 (set-option :strings-exp true)
 (declare-const x Bool)
 (declare-fun c () Int)

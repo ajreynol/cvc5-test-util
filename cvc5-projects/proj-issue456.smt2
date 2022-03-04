@@ -57,31 +57,31 @@
 (assert 
 (xor 
 (= (Variable9 0) 0) 
-(and (member (tuple 8 16 1) (Variable8 0)) (= (Variable9 0) 1))
+(and (set.member (tuple 8 16 1) (Variable8 0)) (= (Variable9 0) 1))
 )
 )				
 (assert 
 (xor 
 (= (Variable10 0) 0) 
-(and (member (tuple 4 16 1) (Variable8 0)) (= (Variable10 0) 1))
+(and (set.member (tuple 4 16 1) (Variable8 0)) (= (Variable10 0) 1))
 )
 )				
 (assert 
 (xor 
 (= (Variable11 0) 0) 
-(and (member (tuple 6 16 1) (Variable8 0)) (= (Variable11 0) 1))
+(and (set.member (tuple 6 16 1) (Variable8 0)) (= (Variable11 0) 1))
 )
 )				
 (assert 
 (xor 
 (= (Variable12 0) 0) 
-(and (member (tuple 2 16 1) (Variable8 0)) (= (Variable12 0) 1))
+(and (set.member (tuple 2 16 1) (Variable8 0)) (= (Variable12 0) 1))
 )
 )				
 
 (declare-fun Variable13 () (Set (Tuple Int Int)))
 (declare-fun Variable14 () (Set (Tuple Int Int)))
-(assert (= Variable14 (intersection (Tclosure 0) Variable3)))
+(assert (= Variable14 (set.inter (Tclosure 0) Variable3)))
 
 (assert (or 
 (and (= (Variable9 0) 1)
@@ -119,31 +119,31 @@
 (assert 
 (xor 
 (= (Variable9 1) 0) 
-(and (member (tuple 8 16 1) (Variable8 1)) (= (Variable9 1) 1))
+(and (set.member (tuple 8 16 1) (Variable8 1)) (= (Variable9 1) 1))
 )
 )				
 (assert 
 (xor 
 (= (Variable10 1) 0) 
-(and (member (tuple 4 16 1) (Variable8 1)) (= (Variable10 1) 1))
+(and (set.member (tuple 4 16 1) (Variable8 1)) (= (Variable10 1) 1))
 )
 )				
 (assert 
 (xor 
 (= (Variable11 1) 0) 
-(and (member (tuple 6 16 1) (Variable8 1)) (= (Variable11 1) 1))
+(and (set.member (tuple 6 16 1) (Variable8 1)) (= (Variable11 1) 1))
 )
 )				
 (assert 
 (xor 
 (= (Variable12 1) 0) 
-(and (member (tuple 2 16 1) (Variable8 1)) (= (Variable12 1) 1))
+(and (set.member (tuple 2 16 1) (Variable8 1)) (= (Variable12 1) 1))
 )
 )				
 
 (declare-fun Variable15 () (Set (Tuple Int Int)))
 (declare-fun Variable16 () (Set (Tuple Int Int)))
-(assert (= Variable16 (intersection (Tclosure 1) Variable13)))
+(assert (= Variable16 (set.inter (Tclosure 1) Variable13)))
 
 (assert (or 
 (and (= (Variable9 1) 1)

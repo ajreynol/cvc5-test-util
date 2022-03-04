@@ -1,4 +1,5 @@
 (set-logic HO_UF)
+(set-info :status sat)
 (set-option :fmf-bound true)
 (set-option :finite-model-find true)
 (declare-sort a 0)

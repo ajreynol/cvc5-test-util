@@ -1,3 +1,5 @@
+; EXPECT: sat
+; EXPECT: sat
 (set-logic QF_ALIA)
 (set-option :cegqi true)
 (set-option :repeat-simp true)

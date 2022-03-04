@@ -1,3 +1,5 @@
+(set-logic ALL)
+(set-info :status sat)
 (declare-datatypes ((list 0)) (((cons (tail list)) (nil))))
 (declare-fun P (Int) Bool)
 (declare-fun S () (Set list))

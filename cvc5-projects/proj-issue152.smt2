@@ -1,4 +1,5 @@
 (set-logic QF_BV)                                                                                                                                                                                   
+(set-info :status sat)
 (set-option :ext-rewrite-quant true)
 (set-option :sygus-inference true)
 (declare-fun _substvar_141_ () Bool)

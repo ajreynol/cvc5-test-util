@@ -1,3 +1,5 @@
+(set-logic ALL)
+(set-info :status sat)
 (declare-const x1 Int)
 (declare-const x2 Int)
 (declare-fun x3 () Int)

@@ -1,3 +1,4 @@
+; EXPECT: false
 (set-logic LRA)
 (set-option :cegqi-nested-qe true)
 (declare-const v2 Bool)

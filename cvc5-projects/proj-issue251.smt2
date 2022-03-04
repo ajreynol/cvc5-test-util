@@ -1,4 +1,5 @@
 (set-logic QF_UFNIA)
+(set-info :status sat)
 (declare-fun _substvar_205_ () Bool)
 (declare-fun _substvar_231_ () Bool)
 (declare-fun _substvar_248_ () Int)

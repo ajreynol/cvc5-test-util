@@ -1,3 +1,5 @@
+(set-logic ALL)
+(set-info :status sat)
 (set-option :cegqi false)
 (set-option :sygus-inference true)
 (declare-const v7 Bool)

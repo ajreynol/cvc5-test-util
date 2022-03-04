@@ -1,4 +1,5 @@
 (set-logic QF_UFNIA)
+(set-info :status sat)
 (set-option :cegqi-all true)
 (set-option :quant-split true)
 (set-option :partial-triggers true)

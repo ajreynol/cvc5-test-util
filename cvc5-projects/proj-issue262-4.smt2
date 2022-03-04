@@ -1,4 +1,5 @@
 (set-logic NRA)
+(set-info :status sat)
 (declare-fun a () Real)
 (declare-fun b () Real)
 (declare-fun c () Real)

@@ -1,4 +1,5 @@
 (set-logic QF_NIA)
+(set-info :status sat)
 (declare-const a Int)
 (declare-const b Int)
 (declare-const c Int)
