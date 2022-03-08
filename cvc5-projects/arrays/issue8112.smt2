@@ -1,4 +1,5 @@
-; --ext-rew-prep --ext-rew-prep-agg --check-models
+(set-logic ALL)
+(set-option :ext-rew-prep agg)
 (declare-fun a () (_ BitVec 1))
 (declare-fun b () (Array (_ BitVec 32) (_ BitVec 8)))
 (declare-fun c () (Array (_ BitVec 32) (_ BitVec 8)))

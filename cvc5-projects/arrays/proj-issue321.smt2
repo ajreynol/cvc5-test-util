@@ -1,4 +1,4 @@
-; --check-proofs
+(set-option :produce-proofs true)
 (declare-const z (_ BitVec 1))
 (declare-const y (_ BitVec 1))
 (declare-const a (Array (_ BitVec 8) (_ BitVec 8)))

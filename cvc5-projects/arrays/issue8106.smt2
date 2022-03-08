@@ -1,4 +1,6 @@
 ; --check-models --check-unsat-cores
+(set-option :produce-models true)
+(set-option :produce-unsat-cores true)
 (declare-const a (Array (_ BitVec 64) (_ BitVec 64))) 
 (declare-const b (_ BitVec 64)) 
 (assert (= (store a (select a b) (select a b)) 

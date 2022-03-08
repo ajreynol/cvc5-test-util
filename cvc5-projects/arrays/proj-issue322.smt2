@@ -1,4 +1,5 @@
 (set-logic ALL)
+(set-option :incremental true)
 (declare-const x Bool)
 (declare-const x1 (Array Bool (Array Bool Bool)))
 (assert (distinct (select x1 false) (store (select x1 false) false true) (select x1 (select (select x1 false) x)) (select (store x1 false (select x1 (select (select x1 false) (select (select x1 false) x)))) (select (store (select x1 false) x (select (select x1 false) (select (select x1 false) x))) (>= (- 1.0) 0.0)))))

@@ -2,6 +2,7 @@
 ; vs.
 ; -i
 (set-logic QF_ALIA)
+(set-option :incremental true)
 (declare-fun v4 () Bool)
 (declare-fun v6 () Bool)
 (declare-fun v9 () Bool)
