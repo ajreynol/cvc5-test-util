@@ -1,0 +1,8 @@
+(set-option :arrays-weak-equiv true)
+(set-info :status sat)
+(declare-const  a (Array (_ BitVec 64) (_ BitVec 64))) 
+(declare-const  b (_ BitVec 64)) 
+(assert (= (store (store a b b) (select a b) (select a #x1111111111111111)) 
+(store (store a b b) (bvlshr b #x0000000000000000) 
+(bvlshr #x1111111111111111 b)))) 
+(check-sat)
