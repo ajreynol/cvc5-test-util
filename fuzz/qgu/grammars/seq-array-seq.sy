@@ -1,0 +1,24 @@
+(set-logic ALL)
+
+
+(synth-fun f ((s (Seq Int)) (i Int) (j Int) (e Int)) (Seq Int)
+((Start (Seq Int)) (StartUnit (Seq Int)) (StartInt Int) (StartE Int))
+  (
+   (Start (Seq Int) (
+     s
+      (seq.update Start StartInt StartUnit)
+     (seq.unit StartE)
+   ))
+   (StartUnit (Seq Int) (
+     (seq.unit StartE)
+   ))
+   (StartInt Int (
+     i
+     j
+   ))
+   (StartE Int (
+     e
+     (seq.nth Start StartInt)
+   ))
+))
+(check-synth)

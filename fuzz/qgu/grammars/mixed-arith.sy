@@ -1,0 +1,17 @@
+(set-logic ALL)
+
+
+(synth-fun f ((i Int) (j Int) (k Real) (m Real)) Bool
+((Start Bool) (StartInt Int) (StartReal Real))
+  (
+   (Start Bool (
+     (= StartInt StartInt) (= StartReal StartReal) (>= StartInt StartInt) (>= StartReal StartReal)
+   ))
+   (StartInt Int (
+      0 1 i j (+ StartInt StartInt) (- StartInt StartInt) (to_int StartReal) (div StartInt StartInt) (ite Start StartInt StartInt)
+   ))
+   (StartReal Real (
+     0.0 1.0 0.5 k m (+ StartReal StartReal) (- StartReal StartReal) (to_real StartInt) (/ StartReal StartReal) (/ StartInt StartInt) (ite Start StartReal StartReal)
+   ))
+))
+(check-synth)

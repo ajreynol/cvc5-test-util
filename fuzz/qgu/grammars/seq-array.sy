@@ -1,0 +1,27 @@
+(set-logic ALL)
+
+(declare-sort E 0)
+
+(synth-fun f ((s (Seq E)) (i Int) (j Int) (e E)) Bool
+((Start Bool) (StartUnit (Seq E))  (StartSeq (Seq E)) (StartInt Int) (StartE E))
+  (
+   (Start Bool (
+     (distinct StartSeq StartSeq)
+   ))
+   (StartUnit (Seq E) (
+     (seq.unit StartE)
+   ))
+   (StartSeq (Seq E) (
+     s
+         (seq.update StartSeq StartInt StartUnit)
+   ))
+   (StartInt Int (
+     i
+     j
+   ))
+   (StartE E (
+     e
+     (seq.nth StartSeq StartInt)
+   ))
+))
+(check-synth)
